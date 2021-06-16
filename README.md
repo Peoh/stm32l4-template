@@ -15,8 +15,8 @@ What I have done is put everything together for a simple use with VSCode, make a
 - OpenOCD
 - [VSCode](https://code.visualstudio.com)
 -  VSCode Extensions (Optional):
-  - [Cortex-debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug)
-  - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+   - [Cortex-debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug)
+   -  [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
 ## Build
 
@@ -31,7 +31,7 @@ Simply run `make flash` to flash your device.
 
 ## Debug
 
-Start the debugging task by pressing F5. Two debug configurations are possible, one in Release, one in Debug.
+VSCode only: Start the debugging task by pressing F5. Two debug configurations are possible, one in Release, one in Debug.
 
 ## Change the default device
 

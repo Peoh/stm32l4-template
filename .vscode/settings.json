@@ -1,0 +1,10 @@
+{
+    "toolchain.targetarch" :"arm-none-eabi-",
+    "toolchain.path" :"/opt/arm-none-eabi/10-2020-q4",
+    "toolchain.bin": "${config:toolchain.path}/bin",
+    "files.associations": {
+        "stm32l412xx.h": "c",
+        "stm32l4xx.h": "c",
+        "main.h": "c"
+    }
+}

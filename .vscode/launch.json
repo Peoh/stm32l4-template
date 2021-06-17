@@ -1,0 +1,36 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "GDB (Debug)",
+			"cwd": "${workspaceRoot}",
+			"executable": "./main.elf",
+			"request": "launch",
+			"type": "cortex-debug",
+			"servertype": "openocd",
+			"gdbPath": "${config:toolchain.bin}/${config:toolchain.targetarch}gdb",
+			"configFiles": [
+                "board/st_nucleo_l4.cfg"
+			],
+			"svdFile": "svd/STM32L4x2.svd",
+			"preLaunchTask": "Make (Debug)"
+		},
+		{
+			"name": "GDB (Release)",
+			"cwd": "${workspaceRoot}",
+			"executable": "./main.elf",
+			"request": "launch",
+			"type": "cortex-debug",
+			"servertype": "openocd",
+			"gdbPath": "${config:toolchain.bin}/${config:toolchain.targetarch}gdb",
+			"configFiles": [
+				"board/st_nucleo_l4.cfg"
+			],
+			"svdFile": "svd/STM32L4x2.svd",
+			"preLaunchTask": "Make (Release)"
+		}
+	]
+}

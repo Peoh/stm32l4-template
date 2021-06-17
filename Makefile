@@ -39,7 +39,7 @@ OBJS = ${OBJS_C} ${OBJS_S}
 
 ### CFLAGS
 # 'Standard Options'
-CFLAGS = -Wall -Wextra -O2 ${INC_PARAMS}
+CFLAGS = -Wall -Wextra -Wshadow -Wdouble-promotion -O2 -g ${INC_PARAMS}
 # Device Specific
 CFLAGS += -D${DEVICE} -mcpu=cortex-m4 -mthumb -T${LDFILE}
 # Specs, map
@@ -53,7 +53,7 @@ CFLAGS += -mfpu=fpv4-sp-d16 -mfloat-abi=hard
 .PHONY: all clean ${TARGET} ${TARGET}.elf ${TARGET}.bin flash size
 all: clean ${TARGET} size
 
-debug: CFLAGS += -O0 -g
+debug: CFLAGS += -O0
 debug: all
 
 ${TARGET}: ${TARGET}.elf
@@ -69,7 +69,7 @@ ${TARGET}.elf: ${OBJS}
 	${CC} ${CFLAGS} -c -x assembler-with-cpp $^ -o $@
 
 disass: ${TARGET}.elf
-	${OD} -drwCSg -Mintel ${TARGET}.elf > ${TARGET}.cdasm
+	${OD} -drwCSg ${TARGET}.elf > ${TARGET}.cdasm
 
 size:
 	${SZ} ${TARGET}.elf

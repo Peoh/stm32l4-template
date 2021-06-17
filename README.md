@@ -39,9 +39,13 @@ You will first need to change/modify/update the linker script. You can use one g
 
 You will need to change some parameters:
 
-- `LDFILE` in Makefile will indicate your new device linker script
--  `DEVICE` in Makefile will indicate the device name. Refer to `CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h` for the device list
-- `svdFile` in the `.vscode/launch.json` will indicate the SVD file matching your device
+- In the Makefile:
+  - `LDFILE` will indicate your new device   linker script
+  -  `DEVICE` will indicate the device name. Refer to `CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h` for the device list
+  - `CMSIS_SYS_SRC` will indicate the `system_stm32l4*.c` file in CMSIS
+  - `CMSIS_START_SRC` will indicate the `startup_stm32l4*.s` file in CMSIS
+- in the `.vscode` folder:
+  - `svdFile` in the `.vscode/launch.json` will indicate the SVD file matching your device
 
 ## FAQ
 
